@@ -72,6 +72,57 @@ a:hover {
   animation: floatIn 420ms ease;
 }
 
+/* Feed header card styling - matches the design */
+.feed > div:first-of-type {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05) !important;
+  padding: 20px 24px !important;
+  margin-bottom: 30px !important;
+  animation: floatIn 420ms ease !important;
+}
+
+.feed > div:first-of-type h1 {
+  margin: 0 !important;
+  color: #004e56;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.feed > div:first-of-type h1 span {
+  padding-top: 0;
+}
+
+.feed > div:first-of-type button,
+.feed > div:first-of-type a {
+  margin: 0;
+  white-space: nowrap;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.feed > div:first-of-type a {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #006d77, #00a896);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 105, 118, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.feed > div:first-of-type a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 10px 22px rgba(0, 105, 118, 0.4);
+  color: #ffffff;
+}
+
 /* Tag chips */
 .tag,
 .chip {
@@ -357,25 +408,444 @@ h1 {
   text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 500px) {
+/* Responsive Styles */
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  box-shadow: none;
+}
+
+.mobile-menu-toggle:hover {
+  transform: none;
+  filter: brightness(1.2);
+  box-shadow: none;
+}
+
+/* Tablet and below (1024px and below) */
+@media (max-width: 1024px) {
+  .feed {
+    max-width: 100%;
+    padding: 0 20px 40px;
+  }
+
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .nav-list {
+    gap: 20px;
+  }
+}
+
+/* Small tablets and large phones (768px and below) */
+@media (max-width: 768px) {
+  /* Navbar adjustments */
+  .navbar {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+  }
+
+  .logo h2 {
+    font-size: 1.3rem;
+  }
+
+  .nav-list {
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+
+  .nav-right button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Feed adjustments */
+  .feed {
+    margin: 16px auto;
+    padding: 0 12px 30px;
+  }
+
+  .feed h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Feed header tablet adjustments */
+  .feed > div:first-of-type {
+    padding: 18px 22px !important;
+  }
+
+  .feed > div:first-of-type h1 {
+    font-size: 1.6rem;
+  }
+
+  /* Container adjustments */
   .container {
-    margin: 40px 20px;
+    max-width: 100%;
+    margin: 60px 20px;
+    padding: 20px;
+  }
+
+  /* Create post wrapper */
+  .create-post-wrapper {
+    max-width: 100%;
+    margin: 20px 12px;
+    padding: 16px;
+  }
+
+  .create-post-wrapper h1 {
+    font-size: 1.3rem;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  .modal-icon {
+    font-size: 40px;
+  }
+
+  /* Buttons */
+  button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Form inputs */
+  .form input,
+  .cp-input,
+  .cp-textarea {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+  /* Navbar mobile menu */
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav-center,
+  .nav-right {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .nav-center.active,
+  .nav-right.active {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .nav-list li a,
+  .nav-list li button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .navbar {
+    padding: 10px 15px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo h2 {
+    font-size: 1.1rem;
+    flex: 1;
+  }
+
+  /* Feed mobile */
+  .feed {
+    margin: 12px auto;
+    padding: 0 8px 20px;
+  }
+
+  .feed h1 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  /* Feed header mobile adjustments */
+  .feed > div:first-of-type {
+    padding: 14px 16px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .feed > div:first-of-type h1 {
+    font-size: 1.25rem;
+  }
+
+  .feed > div {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  /* Container mobile */
+  .container {
+    margin: 40px 12px;
     padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  /* Create post mobile */
+  .create-post-wrapper {
+    margin: 12px 8px;
+    padding: 12px;
+  }
+
+  .create-post-wrapper h1 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .create-post-form .form-group {
+    margin-bottom: 10px;
+  }
+
+  /* Modal mobile */
+  .modal-content {
+    max-width: 95%;
+    padding: 16px;
+    margin: 10px;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .modal-message {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .modal-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .modal-btn {
+    width: 100%;
+    min-width: auto;
+  }
+
+  /* Buttons mobile */
+  button {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Form inputs mobile */
+  .form input,
+  .cp-input,
+  .cp-textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+    margin-bottom: 12px;
+  }
+
+  .form label,
+  .create-post-form label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  /* Tags and chips mobile */
+  .tag,
+  .chip {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  /* Post cards mobile - inline styles in Home.js will need adjustment but CSS can help */
+  .feed > div > div {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Home page header mobile */
+  .feed > div:first-of-type {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px !important;
+  }
+
+  .feed > div:first-of-type h1 {
+    font-size: 1.4rem;
+    width: 100%;
+  }
+
+  .feed > div:first-of-type button,
+  .feed > div:first-of-type a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Extra small phones (320px and below) */
+@media (max-width: 320px) {
+  .logo h2 {
+    font-size: 0.95rem;
+  }
+
+  .feed h1,
+  .container h1,
+  .create-post-wrapper h1 {
+    font-size: 1.1rem;
+  }
+
+  button {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  .modal-content {
+    padding: 12px;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .container {
+    margin: 30px auto;
+  }
+
+  .feed {
+    margin: 12px auto;
+  }
+}
+
+/* Post Details and other pages responsive */
+@media (max-width: 768px) {
+  /* Post details page */
+  div[style*="maxWidth: 720"] {
+    max-width: 100% !important;
+    padding: 0 12px;
+    margin: 0 auto;
+  }
+
+  /* Button groups in post details */
+  div[style*="display: flex"][style*="gap: 8"] {
+    flex-wrap: wrap;
+    gap: 8px !important;
+  }
+
+  /* Comments section */
+  div[id="comments"] {
+    margin-top: 20px !important;
+  }
+
+  div[id="comments"] > div:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Leaderboard and Profile cards */
+  .feed > div[style*="border: 1px solid"] {
+    padding: 10px !important;
+  }
+
+  .feed > div[style*="border: 1px solid"] > div[style*="display: flex"] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Post details mobile */
+  div[style*="maxWidth: 720"] {
+    padding: 0 8px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    word-wrap: break-word;
+  }
+
+  /* Button groups stack on mobile */
+  div[style*="display: flex"][style*="gap: 8"] {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  div[style*="display: flex"][style*="gap: 8"] button {
+    width: 100%;
+  }
+
+  /* Textareas and inputs full width */
+  textarea[style*="width: 100%"],
+  input[style*="width: 100%"] {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* Comments mobile */
+  div[id="comments"] > div[style*="border-top"] {
+    padding-top: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Leaderboard ranking mobile */
+  .feed > div[style*="border: 1px solid"] h3 {
+    font-size: 1rem;
+    word-wrap: break-word;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .navbar {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
   }
 }
 
 .co{
   padding-left: 10px;
   margin-top: 4px;
-}
-
-/* Responsive tweak */
-@media (max-width: 520px) {
-  .create-post-wrapper {
-    margin: 20px;
-    padding: 16px;
-  }
 }
 
 /* Modal Styles */
